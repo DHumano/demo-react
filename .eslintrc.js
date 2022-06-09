@@ -5,11 +5,20 @@ module.exports = {
   },
   extends: ['plugin:react/recommended', 'airbnb', 'prettier'],
   parserOptions: {
+    babelOptions: {
+      configFile: './babel.config.js',
+      presets: ['@babel/preset-react']
+    },
     ecmaFeatures: {
       jsx: true
     },
     ecmaVersion: 'latest',
     sourceType: 'module'
+  },
+  settings: {
+    'import/resolver': {
+      'babel-module': {}
+    }
   },
   plugins: ['react', 'prettier'],
   rules: {
